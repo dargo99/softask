@@ -1,0 +1,472 @@
+@font-face {
+    font-family: 'Cairo-Bold';
+    src: url('fonts/Cairo-Bold.woff') format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Cairo-Light';
+    src: url('fonts/Cairo-Light.woff') format('woff');
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'Cairo-Regular';
+    src: url('fonts/Cairo-Regular.woff') format('woff');
+}
+
+:root {
+    --blue: #3A86FF;
+    --yellow: #FFBE0B;
+    --purple: #8338EC;
+    --rose: #FF006E;
+    --gris: #9E9E9E;
+}
+
+body {
+    font-family: 'Cairo-Regular';
+    line-height: 1em;
+    background-color: #222222;
+    background-repeat: no-repeat;
+    padding: 16px;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: 'Cairo-Bold';
+    font-size: 45px;
+    line-height: 1em;
+}
+
+h2 {
+    font-weight: lighter;
+    color: var(--gris);
+    font-size: 35px;
+}
+
+h3 {
+    font-weight: lighter;
+    text-align: center;
+}
+
+.header,
+.header .colors {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .colors {
+    width: 250px;
+}
+
+.header .colors>div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.header .colors>div:hover,
+.profile:hover,
+.participants>div>span:last-child img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.header .colors img {
+    transition: 0.2s ease;
+}
+
+.header .colors img:hover {
+    transform: rotate(50deg);
+}
+
+.header .colors>div:nth-child(1) {
+    background-color: var(--blue);
+}
+
+.header .colors>div:nth-child(2) {
+    background-color: var(--yellow);
+}
+
+.header .colors>div:nth-child(3) {
+    background-color: var(--purple);
+}
+
+.header .colors>div:nth-child(4) {
+    background-color: var(--rose);
+}
+
+.header .colors>div:first-child::before {
+    content: " ";
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -8px;
+    left: -9px;
+    border: 4px solid var(--blue);
+    border-radius: 50%;
+}
+
+.header .share,
+.btn_meet {
+    background-color: var(--blue);
+    padding: 15px 20px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header .share:hover,
+.btn_meet:hover {
+    background-color: #fff;
+    color: var(--blue);
+}
+
+.header .chat {
+    width: 60px;
+    height: 60px;
+    background-image: url('img/chat.svg');
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.header .chat:hover {
+    background-image: url('img/chat2.svg');
+}
+
+.header>div {
+    cursor: pointer;
+}
+
+.profile img {
+    height: 50px;
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header>div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    min-width: 460px;
+    width: 30%;
+    justify-content: space-between;
+}
+
+.header input {
+    background: none;
+    border: 1px solid var(--blue);
+    padding: 7px 40px;
+    border-radius: 25px;
+    color: var(--gris);
+}
+
+.header input:hover {
+    background-color: #222222;
+}
+
+.header input::placeholder {
+    color: var(--gris);
+}
+
+.header input:focus {
+    border: 1px solid #fff;
+    outline: none;
+}
+
+.main {
+    display: flex;
+}
+
+.main .lateral {
+    background-color: #2E2E2E;
+    width: 25%;
+    min-width: 300px;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.main .lateral::before {
+    content: '';
+    display: block;
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    background-color: var(--blue);
+    z-index: -1;
+    top: 40%;
+    border-radius: 60%;
+    filter: blur(50px);
+}
+
+.lateral>div {
+    width: 100%;
+}
+
+.lateral h1 {
+    margin-bottom: 1px;
+}
+
+.info {
+    display: inline-block;
+    width: 17px;
+    height: 19px;
+    background-image: url('img/info.svg');
+    position: relative;
+    bottom: -5px;
+}
+
+span:hover .info {
+    background-image: url('img/info2.svg');
+}
+
+.descrip {
+    cursor: pointer;
+    color: var(--gris);
+}
+
+.participants>div {
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.participants>div>div {
+    display: flex;
+    align-items: center;
+}
+
+.participants>div>span:last-child {
+    display: none;
+}
+
+.participants>div:hover>span:last-child {
+    display: block;
+}
+
+.participants>div>span:last-child>img:first-child {
+    margin-right: 15px;
+}
+
+.participants>div>span:last-child img {
+    width: 20px;
+}
+
+.participants>div:hover {
+    background-color: #222222;
+    border-radius: 10px;
+}
+
+.participants .profile,
+.participants span {
+    margin-right: 10px;
+}
+
+.participants {
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-bottom: 1px solid var(--gris);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #222222;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f1f1f1;
+}
+
+.calendar {
+    width: 90%;
+    margin: auto;
+    line-height: 30px;
+}
+
+.calendar ol {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.calendar ol:last-child {
+    font-size: 13px;
+}
+
+.calendar hr {
+    border: 1px solid var(--blue);
+}
+
+.first-day {
+    grid-column-start: 4;
+}
+
+.calendar ol:last-child>li {
+    border-radius: 515px;
+    width: 30px;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+.calendar ol:last-child>li:hover {
+    background-color: var(--gris);
+}
+
+.currentdate {
+    background-color: var(--blue);
+}
+
+.btn_meet {
+    max-width: 140px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.tasks h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1600px) {
+    .main .lateral::before {
+        height: 400px;
+        width: 400px;
+        top: 45%;
+    }
+}
+
+.tasks {
+    padding: 30px;
+    width: 70%;
+}
+
+.taskstable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    min-width: 500px;
+}
+
+.taskstable th {
+    border-bottom: none !important;
+}
+
+.taskstable th,
+.taskstable td {
+    border-bottom: 1px solid var(--gris);
+    text-align: left;
+    padding: 20px;
+}
+
+.taskstable th {
+    color: var(--gris);
+}
+
+.taskstable .profile {
+    display: inline-block;
+    margin-left: -15px;
+    cursor: pointer;
+}
+
+.logobg {
+    position: fixed;
+    top: 72vh;
+    right: 0;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.taskstable thead tr:first-child:hover {
+    background: none;
+}
+
+.taskstable tr:hover {
+    background-color: #222222;
+    border-radius: 10px;
+}
+
+.taskstable tr:hover td {
+    border-bottom: 1px solid var(--blue);
+}
+
+.edit {
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+.taskstable tr:hover .edit {
+    display: inline-block;
+}
+
+@media screen and (max-width: 1000px) {
+    .colors {
+        display: none !important;
+    }
+
+    .header>div:nth-child(3) {
+        min-width: 100px;
+    }
+
+}
+
+@media screen and (max-width: 922px) {
+    .lateral {
+        width: 100% !important;
+    }
+
+    .main {
+        flex-wrap: wrap;
+    }
+
+    .tasks {
+        width: 100%;
+    }
+
+    .main .lateral::before {
+        top: 40%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .chat {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .share {
+        display: none;
+    }
+
+    .tasks {
+        padding: 0;
+    }
+
+    .header>div:nth-child(3) {
+        justify-content: center;
+    }
+}
